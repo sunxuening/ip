@@ -44,8 +44,9 @@ function GetArea($ipdzcs)
 			curl_setopt ($ch, CURLOPT_TIMEOUT, $timeout);
 			$contents = curl_exec($ch);
 			$contents = iconv('GB2312', 'UTF-8//IGNORE',  $contents);
+			$httpcode = curl_getinfo($ch,CURLINFO_HTTP_CODE); 
 			curl_close($ch); 
-			if( $contents === "")   //若ip138出问题了，直接显示纯真数据库数据
+			if( $httpcode <> 200)   //若ip138出问题了，直接显示纯真数据库数据
 				{
 						 
 						$Area[1][1] = $czipxx;   //参考数据1
@@ -76,15 +77,17 @@ function GetArea($ipdzcs)
 			curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt ($ch, CURLOPT_TIMEOUT, $timeout);
 			$ipip = curl_exec($ch);
+			$httpcode = curl_getinfo($ch,CURLINFO_HTTP_CODE); 
 			curl_close($ch); 
-			if($ipip === "")
-				 {
 
-					$ipip[0] = $Area[1][1];
+			if($httpcode <> 200)
+				 {
+					$ipip = array('0' => $Area[1][1]);
+					
 				}
 			else
 				{ 
-					 $ipip = json_decode($ipip, true); 	 
+					 $ipip = json_decode($ipip, true); 
 				 }
 		}	
 		return $Area;

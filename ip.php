@@ -27,13 +27,13 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 						推荐数据：
 						<?php 
 						if ($ipip[0] === $ipip[1])
-							echo "$ipip[0]"."$ipip[2]"."$ipip[3]"."$ipip[4]"."$ipip[5]" ;
+							print_r( "$ipip[0]"."$ipip[2]"."$ipip[3]"."$ipip[4]"."$ipip[5]") ;
 						elseif($ipip[1] === $ipip[2])
-							echo "$ipip[0]"."$ipip[1]"."$ipip[3]"."$ipip[4]"."$ipip[5]" ;
+							print_r( "$ipip[0]"."$ipip[1]"."$ipip[3]"."$ipip[4]"."$ipip[5]") ;
 						elseif($ipip[2] === $ipip[3])
-							echo "$ipip[0]"."$ipip[1]"."$ipip[2]"."$ipip[4]"."$ipip[5]" ;
+							print_r( "$ipip[0]"."$ipip[1]"."$ipip[2]"."$ipip[4]"."$ipip[5]") ;
 						else
-							echo "$ipip[0]"."$ipip[1]"."$ipip[2]"."$ipip[3]"."$ipip[4]"."$ipip[5]" ;	
+							print_r("$ipip[0]"."$ipip[1]"."$ipip[2]"."$ipip[3]"."$ipip[4]"."$ipip[5]") ;	
 						?>
 					</font>
 				</li>
