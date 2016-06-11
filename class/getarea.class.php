@@ -59,8 +59,8 @@ function GetArea($ipdzcs)
 						
 						preg_match_all('|<li>本站主数据：.*</li>|',$contents,$rsR);
 						$rsR[0][0] = str_replace("<li>本站主数据：", "", $rsR[0][0]);
-						preg_match_all('|<li>参考数据一：.*</li>|',$contents,$rsB);
-						$rsB[0][0] = str_replace("<li>参考数据一：", "", $rsB[0][0]);
+						preg_match_all('|<li>参考数据二：.*</li>|',$contents,$rsB);
+						$rsB[0][0] = str_replace("<li>参考数据二：", "", $rsB[0][0]);
 						//preg_match_all('|<h1>.*</h1>|',$contents,$rsC);
 						$pos = strpos($rsR[0][0],'</li>');	
 						$pos1 = strpos($rsB[0][0],'</li>');
