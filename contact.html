@@ -72,7 +72,7 @@
 				<td>
 					<font face="微软雅黑" size="5px" color="red">对本站有任何意见和建议都可以在本页面提交，对本站提供的数据有疑问的也可以在这里提交!</font>
 					<!--兼容版，可保证页面完全兼容-->
-					<div id="SOHUCS"></div>
+			<!-- 		<div id="SOHUCS"></div>
 					<script>
 					  (function(){
 						var appid = 'cyr5mu4OE',
@@ -85,7 +85,17 @@
 						s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
 						h.insertBefore(s,h.firstChild);
 					  })()
-					</script>
+					</script> -->
+					
+					<!--高速版20160612-->
+					<div id="SOHUCS"></div>
+					<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+					<script type="text/javascript">
+						window.changyan.api.config({
+							appid: 'cyr5mu4OE',
+							conf: 'prod_ec4b0223a9c1c3f2bd790b9a0de91090'
+						});
+					</script>        
 					<!--高速版，加载速度快，使用前需测试页面的兼容性-->
 					<!-- <div id="SOHUCS" sid=”contact”></div>
 						<script>
@@ -110,7 +120,7 @@
 			<tr align="center">
 				<td>
 					<font color="#000" face="微软雅黑" >
-						Copyrigh &copy;2013 - 2014       liangwei.cc 版权所有					</font>				</td>
+						Copyrigh &copy;2013 - 2016       liangwei.cc 版权所有					</font>				</td>
 			</tr>
 			<tr align="center">
 				<td>
