@@ -5,7 +5,7 @@
 *
 */
 ini_set("display_errors","off"); 
-//error_reporting(0);
+error_reporting(0);
 require_once('czip.class.php'); //引入纯真数据库查询类
 //require_once('IP.class.php'); //引入ipip.net
 function GetArea($ipdzcs)
@@ -69,26 +69,27 @@ function GetArea($ipdzcs)
 						$Area[1][3] = "您查询的IP: $zsip";
 						//$Area[1][3] = $rsC[0][0];
 					}
-				//调用ipip.net数据	
+				//调用ipip.net数据
+			$useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0";				
 			$ch = curl_init();
 			$urlipip = "http://freeapi.ipip.net/".$zsip;
-			$timeout = 60;
+			$timeout = 80;
 			curl_setopt ($ch, CURLOPT_URL, $urlipip);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION,TRUE);
+			curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
 			curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt ($ch, CURLOPT_TIMEOUT, $timeout);
 			$ipip = curl_exec($ch);
 			$httpcode = curl_getinfo($ch,CURLINFO_HTTP_CODE); 
 			curl_close($ch); 
-
 			if($httpcode <> 200)
 				 {
 					$ipip = array('0' => $Area[1][1]);
-					
 				}
 			else
 				{ 
 					 $ipip = json_decode($ipip, true); 
-				 }
+				 }		 		 
 		}	
 		return $Area;
 	}

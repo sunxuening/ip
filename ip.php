@@ -20,11 +20,17 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 		</tr>
 	</table>
 	<table border="0" width="600px" align="center" >
-	<tr>
-			<td> 
+		<tr>
+			<td width="135px" align="left"> 
 				<li>
 					<font color="red" face="微软雅黑" align="left">
-						推荐数据：
+						推荐数据(ipip)：
+					</font>
+				</li>
+			</td>
+			<td width="auto" align="left">
+				<li>
+					<font  color="red" face="微软雅黑" align="left">
 						<?php 
 						if ($ipip[0] === $ipip[1])
 							print_r( "$ipip[0]"."$ipip[2]"."$ipip[3]"."$ipip[4]"."$ipip[5]") ;
@@ -38,33 +44,51 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 					</font>
 				</li>
 			</td>
+					
 		</tr>
 		<tr>
-			<td> 
+			<td width="135px" align="left"> 
 				<li>
 					<font color="red" face="微软雅黑" align="left">
-						参考数据：
+						参考数据(ip138)：
+					</font>
+				</li>
+			</td>
+			<td width="auto" align="left">
+				<li>
+					<font color="red" face="微软雅黑" align="left">
 						<?php print_r($area[1][1]) ?>
 					</font>
 				</li>
 			</td>
 		</tr>
-		
 		<tr >
-			<td> 
+			<td width="135px" align="left"> 
 				<li>
 					<font color="red"  face="微软雅黑"  >
-						本站数据：
+						本站数据(cz88)：
+					</font>
+				</li>
+			</td>
+			<td width="auto" align="left">
+				<li>
+					<font color="red" face="微软雅黑" align="left">
 						<?php echo "$czipxx"  ?>
 					</font>
 				</li>
 			</td>
 		</tr>
 		<tr >
-			<td> 
+			<td width="135px" align="left"> 
 				<li>
 					<font color="red"  face="微软雅黑"  >
-						参考数据：
+						参考数据(ip138)：
+					</font>
+				</li>
+			</td>
+			<td width="auto" align="left">
+				<li>
+					<font color="red"  face="微软雅黑"  >
 						<?php  print_r($area[1][2])  ?>
 					</font>
 				</li>
@@ -77,7 +101,7 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 	<tr align="center">
 		<td>
 			<font color="#000" face="微软雅黑" >
-				Copyrigh &copy;2013 - 2014       liangwei.cc 版权所有
+				Copyrigh &copy;2013 - 2016       liangwei.cc 版权所有
 			</font>
 		</td>
 	</tr>
