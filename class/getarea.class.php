@@ -37,7 +37,7 @@ function GetArea($ipdzcs)
 			$czipxx = $location[country].$location[area];  //直接将纯真数据库数据返回给“本站数据”内容
 			$czipxx = iconv('GB2312', 'UTF-8//IGNORE',  $czipxx);
 			$ch = curl_init();
-			$url = "http://www.ip138.com/ips1388.asp?ip=".$zsip."&action=2";
+			$url = "http://www.ip138.com/ips138.asp?ip=".$zsip."&action=2";
 			$timeout = 60;
 			curl_setopt ($ch, CURLOPT_URL, $url);
 			curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -57,10 +57,10 @@ function GetArea($ipdzcs)
 					{
 						
 						
-						preg_match_all('|<li>本站主数据：.*</li>|',$contents,$rsR);
-						$rsR[0][0] = str_replace("<li>本站主数据：", "", $rsR[0][0]);
-						preg_match_all('|<li>参考数据二：.*</li>|',$contents,$rsB);
-						$rsB[0][0] = str_replace("<li>参考数据二：", "", $rsB[0][0]);
+						preg_match_all('|<li>本站数据：.*</li>|',$contents,$rsR);
+						$rsR[0][0] = str_replace("<li>本站数据：", "", $rsR[0][0]);
+						preg_match_all('|<li>参考数据1：.*</li>|',$contents,$rsB);
+						$rsB[0][0] = str_replace("<li>参考数据1：", "", $rsB[0][0]);
 						//preg_match_all('|<h1>.*</h1>|',$contents,$rsC);
 						$pos = strpos($rsR[0][0],'</li>');	
 						$pos1 = strpos($rsB[0][0],'</li>');
