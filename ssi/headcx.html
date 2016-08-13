@@ -1,0 +1,22 @@
+<td valign="top">
+	<table width="600px" border="1" align="center" cellpadding="0" cellspacing="0" >
+		<form  name="frm" action="ip.php" method="post" >	
+			<div style="margin-Bottom:20px"  align="center">
+				<font face="微软雅黑" size="4">ip.liangwei.cc <a href="http://ip.liangwei.cc">ip地址查询</a>,查询域名或者ip地址的地址位置</font>	
+			</div>
+			<tr height="25px" > 
+				<th width="240px" ><font face="宋体" size="4px">请输入ip地址或者域名 </font></th>
+				<td>
+					<input id="ipadd" type="text"  value="请输入您要查询的ip地址或者域名" name="ipdz" size="50" style="width:360px; height:25px;font-size:22px;color:gray;" onBlur="this.value=ignoreSpaces(this.value);"   >								
+			  </td>	
+			</tr>	
+			<tr>
+				<td colspan="2" align="center">
+					<input id="cx" type="submit" name="sub" value="查询" style="width:60px; height:35px; font-family:楷体; font-size:20px;" >	</td>
+			</tr>
+		</form>	
+	</table>
+	<div align="center" style="margin-top:30px">
+		<!--#include virtual="/iframe/local.php" -->
+	</div>
+</td>

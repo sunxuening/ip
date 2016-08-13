@@ -15,6 +15,7 @@ function GetArea($ipdzcs)
 		global $zsip ;
 		global $czipxx ;  //纯真ip信息
 		global $ipip;
+		$useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0";
 		if (strpos($ipdzcs, "*"))     //判断ip地址中是否包含“*”，包含就替换成0，不包含直接使用
 			$ipdz = str_replace("*", "0", $ipdzcs);
 		else
@@ -29,34 +30,32 @@ function GetArea($ipdzcs)
 			$Area[1][2] = "您输入的".'"'.$ipdz.'"'."地址格式有误，请核对后重新输入"; //参考数据2
 			$czipxx = "您输入的".'"'.$ipdz.'"'."地址格式有误，请核对后重新输入";
 			$ipip[0] = "您输入的".'"'.$ipdz.'"'."地址格式有误，请核对后重新输入";
-		}	
-			
+		}		
 		else
 		{
 			$zsip = $location[ip] ;
-			$czipxx = $location[country].$location[area];  //直接将纯真数据库数据返回给“本站数据”内容
+			$czipxx = $location[country].$location[area];  //直接将纯真数据库数据返回给“参考数据(ip138)”内容
 			$czipxx = iconv('GB2312', 'UTF-8//IGNORE',  $czipxx);
 			$ch = curl_init();
 			$url = "http://www.ip138.com/ips138.asp?ip=".$zsip."&action=2";
 			$timeout = 60;
 			curl_setopt ($ch, CURLOPT_URL, $url);
+			curl_setopt ($ch, CURLOPT_FOLLOWLOCATION,TRUE);
+			curl_setopt ($ch, CURLOPT_USERAGENT, $useragent);
 			curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt ($ch, CURLOPT_TIMEOUT, $timeout);
 			$contents = curl_exec($ch);
 			$contents = iconv('GB2312', 'UTF-8//IGNORE',  $contents);
 			$httpcode = curl_getinfo($ch,CURLINFO_HTTP_CODE); 
 			curl_close($ch); 
-			if( $httpcode <> 200)   //若ip138出问题了，直接显示纯真数据库数据
+			if( $httpcode <> 200 and $httpcode <> 301 and $httpcode <> 302 )   //若ip138出问题了，直接显示纯真数据库数据
 				{
-						 
 						$Area[1][1] = $czipxx;   //参考数据1
 						$Area[1][2] = $czipxx;  //参考数据2
 						$Area[1][3] = "您查询的IP: $zsip";
 				}
 			else
 					{
-						
-						
 						preg_match_all('|<li>本站数据：.*</li>|',$contents,$rsR);
 						$rsR[0][0] = str_replace("<li>本站数据：", "", $rsR[0][0]);
 						preg_match_all('|<li>参考数据1：.*</li>|',$contents,$rsB);
@@ -69,20 +68,19 @@ function GetArea($ipdzcs)
 						$Area[1][3] = "您查询的IP: $zsip";
 						//$Area[1][3] = $rsC[0][0];
 					}
-				//调用ipip.net数据
-			$useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0";				
+			//调用ipip.net数据		
 			$ch = curl_init();
 			$urlipip = "http://freeapi.ipip.net/".$zsip;
 			$timeout = 80;
 			curl_setopt ($ch, CURLOPT_URL, $urlipip);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION,TRUE);
-			curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
+			curl_setopt ($ch, CURLOPT_FOLLOWLOCATION,TRUE);
+			curl_setopt ($ch, CURLOPT_USERAGENT, $useragent);
 			curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt ($ch, CURLOPT_TIMEOUT, $timeout);
 			$ipip = curl_exec($ch);
 			$httpcode = curl_getinfo($ch,CURLINFO_HTTP_CODE); 
 			curl_close($ch); 
-			if($httpcode <> 200)
+			if($httpcode <> 200 and $httpcode <> 301 and $httpcode <> 302)
 				 {
 					$ipip = array('0' => $Area[1][1]);
 				}

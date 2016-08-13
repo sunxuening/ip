@@ -7,17 +7,8 @@
 	$clientip =  get_client_ip();   //获取客户端本地ip
 	$area = GetArea($clientip);  //调用Area函数 获取地址
 ?>
-<html>
-	<head>
-		<title> 您本地电脑IP地址 </title>
-	</head>
-	<body style="border:0 ; margin:0px; padding:0 ;">
-		<table style=" width: 700px ; margin:  auto; hight: 20px ">
-			<center>
-				<font color="red" >
-				您本地IP是:[<?php echo $clientip ?>]   来自：<?php echo "$czipxx"  ?>
-				</font>
-			</center>
-		</table>
-	</body>
-</html>
+<center>
+	<font color="red" >
+	您本地IP是:[<?php echo $clientip ?>]   来自：<?php echo "$czipxx"  ?>
+	</font>
+</center>
