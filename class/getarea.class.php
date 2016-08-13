@@ -15,7 +15,7 @@ function GetArea($ipdzcs)
 		global $zsip ;
 		global $czipxx ;  //纯真ip信息
 		global $ipip;
-		$useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0";
+		$useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0"; //模拟浏览器访问，防止网站屏蔽数据抓取
 		if (strpos($ipdzcs, "*"))     //判断ip地址中是否包含“*”，包含就替换成0，不包含直接使用
 			$ipdz = str_replace("*", "0", $ipdzcs);
 		else
