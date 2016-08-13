@@ -23,7 +23,7 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 	<body>
 		<!--#include virtual="/ssi/header.html" -->
 		<div cellpadding="0" cellspacing="0" style="  padding:0; height:200px ">
-			<table style=" width: 1100 ; margin:  auto;  ">
+			<table style=" width: 1000px ; margin:  auto;  ">
 				<tr>
 					<!--#include virtual="/ssi/left.html" -->
 					<!--#include virtual="/ssi/headcx.html" -->
