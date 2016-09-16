@@ -40,7 +40,7 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 				</table>
 				<table border="0" width="600px" align="center" >
 					<tr>
-						<td width="135px" align="left"> 
+						<td width="155px" align="left"> 
 							<li>
 								<font color="red" face="微软雅黑" align="left">
 									推荐数据(ipip)：
