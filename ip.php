@@ -66,7 +66,7 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 								
 					</tr>
 					<tr>
-						<td width="135px" align="left"> 
+						<td width="155px" align="left"> 
 							<li>
 								<font color="red" face="微软雅黑" align="left">
 									参考数据(ip138)：
@@ -82,7 +82,7 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 						</td>
 					</tr>
 					<tr >
-						<td width="135px" align="left"> 
+						<td width="155px" align="left"> 
 							<li>
 								<font color="red"  face="微软雅黑"  >
 									本站数据(cz88)：
@@ -98,7 +98,7 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 						</td>
 					</tr>
 					<tr >
-						<td width="135px" align="left"> 
+						<td width="155px" align="left"> 
 							<li>
 								<font color="red"  face="微软雅黑"  >
 									参考数据(ip138)：
