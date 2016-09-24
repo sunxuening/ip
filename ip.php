@@ -22,7 +22,7 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 	</head>	
 	<body>
 		<!--#include virtual="/ssi/header.html" -->
-		<div cellpadding="0" cellspacing="0" style="  padding:0; height:240px ">
+		<div cellpadding="0" cellspacing="0" style="  padding:0; height:200px ">
 			<table style=" width: 1000px ; margin:  auto;  ">
 				<tr>
 					<!--#include virtual="/ssi/left.html" -->
@@ -30,7 +30,7 @@ if(is_file($_SERVER['DOCUMENT_ROOT'].'/360safe/360webscan.php')){
 					<!--#include virtual="/ssi/right.html" -->
 				</tr>
 			</table>
-			<div  style="margin:auto ; padding:0;width:600px ; height:200px ">
+			<div  style="margin:auto ; padding:0;width:600px ; height:240px ">
 				<table border="0" width="600px" align="center" height="60px" >
 					<tr align="center">
 						<td>
